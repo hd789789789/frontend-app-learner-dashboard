@@ -15,18 +15,16 @@ exports[`App router component component initialize failure snapshot 1`] = `
     />
   </HelmetWrapper>
   <div>
-    <AppWrapper>
-      <LearnerDashboardHeader />
-      <main>
-        <Alert
-          variant="danger"
-        >
-          <ErrorPage
-            message="If you experience repeated failures, please email support at test-support-url"
-          />
-        </Alert>
-      </main>
-    </AppWrapper>
+    <LearnerDashboardHeader />
+    <main>
+      <Alert
+        variant="danger"
+      >
+        <ErrorPage
+          message="If you experience repeated failures, please email support at test-support-url"
+        />
+      </Alert>
+    </main>
     <Footer
       logo="fakeLogo.png"
     />
@@ -50,14 +48,12 @@ exports[`App router component component no network failure snapshot 1`] = `
     />
   </HelmetWrapper>
   <div>
-    <AppWrapper>
-      <LearnerDashboardHeader />
-      <main>
-        <ExperimentProvider>
-          <Dashboard />
-        </ExperimentProvider>
-      </main>
-    </AppWrapper>
+    <LearnerDashboardHeader />
+    <main>
+      <ExperimentProvider>
+        <Dashboard />
+      </ExperimentProvider>
+    </main>
     <Footer
       logo="fakeLogo.png"
     />
@@ -84,14 +80,12 @@ exports[`App router component component no network failure with optimizely proje
     />
   </HelmetWrapper>
   <div>
-    <AppWrapper>
-      <LearnerDashboardHeader />
-      <main>
-        <ExperimentProvider>
-          <Dashboard />
-        </ExperimentProvider>
-      </main>
-    </AppWrapper>
+    <LearnerDashboardHeader />
+    <main>
+      <ExperimentProvider>
+        <Dashboard />
+      </ExperimentProvider>
+    </main>
     <Footer
       logo="fakeLogo.png"
     />
@@ -118,14 +112,12 @@ exports[`App router component component no network failure with optimizely url s
     />
   </HelmetWrapper>
   <div>
-    <AppWrapper>
-      <LearnerDashboardHeader />
-      <main>
-        <ExperimentProvider>
-          <Dashboard />
-        </ExperimentProvider>
-      </main>
-    </AppWrapper>
+    <LearnerDashboardHeader />
+    <main>
+      <ExperimentProvider>
+        <Dashboard />
+      </ExperimentProvider>
+    </main>
     <Footer
       logo="fakeLogo.png"
     />
@@ -149,18 +141,16 @@ exports[`App router component component refresh failure snapshot 1`] = `
     />
   </HelmetWrapper>
   <div>
-    <AppWrapper>
-      <LearnerDashboardHeader />
-      <main>
-        <Alert
-          variant="danger"
-        >
-          <ErrorPage
-            message="If you experience repeated failures, please email support at test-support-url"
-          />
-        </Alert>
-      </main>
-    </AppWrapper>
+    <LearnerDashboardHeader />
+    <main>
+      <Alert
+        variant="danger"
+      >
+        <ErrorPage
+          message="If you experience repeated failures, please email support at test-support-url"
+        />
+      </Alert>
+    </main>
     <Footer
       logo="fakeLogo.png"
     />

@@ -24,7 +24,6 @@ import track from 'tracking';
 
 import fakeData from 'data/services/lms/fakeData/courses';
 
-import AppWrapper from 'containers/WidgetContainers/AppWrapper';
 import LearnerDashboardHeader from 'containers/LearnerDashboardHeader';
 
 import { getConfig } from '@edx/frontend-platform';
@@ -94,21 +93,19 @@ export const App = () => {
         {optimizelyScript()}
       </Helmet>
       <div>
-        <AppWrapper>
-          <LearnerDashboardHeader />
-          <main>
-            {hasNetworkFailure
-              ? (
-                <Alert variant="danger">
-                  <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
-                </Alert>
-              ) : (
-                <ExperimentProvider>
-                  <Dashboard />
-                </ExperimentProvider>
-              )}
-          </main>
-        </AppWrapper>
+        <LearnerDashboardHeader />
+        <main>
+          {hasNetworkFailure
+            ? (
+              <Alert variant="danger">
+                <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
+              </Alert>
+            ) : (
+              <ExperimentProvider>
+                <Dashboard />
+              </ExperimentProvider>
+            )}
+        </main>
         <Footer logo={getConfig().LOGO_POWERED_BY_OPEN_EDX_URL_SVG} />
         <ZendeskFab />
       </div>

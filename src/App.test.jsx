@@ -10,7 +10,7 @@ import { RequestKeys } from 'data/constants/requests';
 import { reduxHooks } from 'hooks';
 import Dashboard from 'containers/Dashboard';
 import LearnerDashboardHeader from 'containers/LearnerDashboardHeader';
-import AppWrapper from 'containers/WidgetContainers/AppWrapper';
+
 import { ExperimentProvider } from 'ExperimentContext';
 import { App } from './App';
 import messages from './messages';
@@ -23,7 +23,6 @@ jest.mock('components/ZendeskFab', () => 'ZendeskFab');
 jest.mock('ExperimentContext', () => ({
   ExperimentProvider: 'ExperimentProvider',
 }));
-jest.mock('containers/WidgetContainers/AppWrapper', () => 'AppWrapper');
 jest.mock('data/redux', () => ({
   selectors: 'redux.selectors',
   actions: 'redux.actions',
@@ -68,11 +67,6 @@ describe('App router component', () => {
       });
       test('Footer logo drawn from env variable', () => {
         expect(el.instance.findByType(Footer)[0].props.logo).toEqual(logo);
-      });
-      it('wraps the header and main components in an AppWrapper widget container', () => {
-        const container = el.instance.findByType(AppWrapper)[0];
-        expect(container.children[0].type).toEqual('LearnerDashboardHeader');
-        expect(container.children[1].type).toEqual('main');
       });
     };
     describe('no network failure', () => {
