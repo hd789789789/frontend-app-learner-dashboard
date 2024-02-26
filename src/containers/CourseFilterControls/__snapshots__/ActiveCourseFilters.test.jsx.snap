@@ -27,7 +27,7 @@ exports[`ActiveCourseFilters snapshot renders 1`] = `
   <Chip
     key="upgraded"
   >
-    Upgraded
+    Đã nâng cấp
   </Chip>
   <Button
     onClick={[MockFunction setFilters.clear]}

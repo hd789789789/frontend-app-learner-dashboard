@@ -41,6 +41,6 @@ exports[`Checkbox snapshot renders upgraded 1`] = `
   className="py-2"
   value="upgraded"
 >
-  Upgraded
+  
 </Form.Checkbox>
 `;

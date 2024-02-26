@@ -17,7 +17,7 @@ exports[`UpgradeButton snapshot can upgrade 1`] = `
   }
   variant="outline-primary"
 >
-  Upgrade
+  Nâng cấp
 </ActionButton>
 `;
 
@@ -27,6 +27,6 @@ exports[`UpgradeButton snapshot cannot upgrade 1`] = `
   iconBefore={[MockFunction icons.Locked]}
   variant="outline-primary"
 >
-  Upgrade
+  Nâng cấp
 </ActionButton>
 `;

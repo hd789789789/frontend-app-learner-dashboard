@@ -17,7 +17,7 @@ exports[`CourseCardImage snapshot renders clickable link course Image 1`] = `
 >
   <Fragment>
     <img
-      alt="Course thumbnail"
+      alt="Hình khóa học"
       className="pgn__card-image-cap show"
       src="banner-img-src"
     />
@@ -47,7 +47,7 @@ exports[`CourseCardImage snapshot renders disabled link 1`] = `
 >
   <Fragment>
     <img
-      alt="Course thumbnail"
+      alt="Hình khóa học"
       className="pgn__card-image-cap show"
       src="banner-img-src"
     />

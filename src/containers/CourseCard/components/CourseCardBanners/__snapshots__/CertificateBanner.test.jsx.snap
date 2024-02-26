@@ -168,7 +168,7 @@ exports[`CertificateBanner snapshot is restricted with support email 1`] = `
 
 exports[`CertificateBanner snapshot not passing and audit 1`] = `
 <Banner>
-  Grade required to pass the course: 0.8‏%
+  Điểm cần thiết để vượt qua khóa học: 0.8‏%
 </Banner>
 `;
 

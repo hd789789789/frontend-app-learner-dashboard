@@ -15,7 +15,7 @@ exports[`BeginCourseButton snapshot disabled snapshot 1`] = `
     }
   }
 >
-  Begin Course
+  Bắt đầu
 </ActionButton>
 `;
 
@@ -34,6 +34,6 @@ exports[`BeginCourseButton snapshot enabled snapshot 1`] = `
     }
   }
 >
-  Begin Course
+  Bắt đầu
 </ActionButton>
 `;

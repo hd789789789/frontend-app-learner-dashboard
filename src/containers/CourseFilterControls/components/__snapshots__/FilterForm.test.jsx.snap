@@ -5,7 +5,7 @@ exports[`FilterForm snapshot renders 1`] = `
   <div
     className="filter-form-heading mb-1"
   >
-    Course Status
+    Trạng thái khoá học
   </div>
   <Form.CheckboxSet
     name="course-status-filters"
