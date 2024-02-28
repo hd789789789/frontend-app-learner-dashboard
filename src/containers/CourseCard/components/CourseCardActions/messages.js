@@ -4,7 +4,7 @@ export const messages = StrictDict({
     upgrade: {
         id: "learner-dash.courseCard.actions.upgrade",
         description: "Course card upgrade button text",
-        defaultMessage: "Upgrade",
+        defaultMessage: "Nâng cấp",
     },
     beginCourse: {
         id: "learner-dash.courseCard.actions.beginCourse",
@@ -14,17 +14,17 @@ export const messages = StrictDict({
     resume: {
         id: "learner-dash.courseCard.actions.resume",
         description: "Course card resume button text",
-        defaultMessage: "Resume",
+        defaultMessage: "Tiếp tục",
     },
     viewCourse: {
         id: "learner-dash.courseCard.actions.viewCourse",
         description: "Course card view-course button text",
-        defaultMessage: "View Course",
+        defaultMessage: "Xem khoá học",
     },
     selectSession: {
         id: "learner-dash.courseCard.actions.selectSession",
         description: "Course card select-session button text",
-        defaultMessage: "Select Session",
+        defaultMessage: "Chọn phiên bản",
     },
 });
 

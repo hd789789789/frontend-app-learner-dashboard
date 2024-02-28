@@ -24,7 +24,7 @@ const messages = defineMessages({
   upgraded: {
     id: 'learner-dash.courseListFilters.upgraded',
     description: 'upgraded filter checkbox label for course list filters',
-    defaultMessage: 'Upgraded',
+    defaultMessage: 'Đã nâng cấp',
   },
   clearAll: {
     id: 'learner-dash.courseListFilters.clearAll',
