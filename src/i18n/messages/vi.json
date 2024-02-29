@@ -65,5 +65,6 @@
     "leanerDashboard.verifiedConfirmEmailButton": "Tôi đã xác nhận email của mình",
     "leanerDashboard.confirmEmailModalHeader": "Hãy xác nhận email của bạn",
     "leanerDashboard.confirmEmailModalBody": "Chúng tôi đã gửi cho bạn một email để xác thực tài khoản của bạn. Vui lòng kiểm tra hộp thư đến của bạn và nhấp vào nút lớn màu đỏ để xác nhận và tiếp tục tìm hiểu.",
-    "leanerDashboard.confirmEmailImageAlt": "Xác nhận nền email"
+    "leanerDashboard.confirmEmailImageAlt": "Xác nhận nền email",
+    "learner-dash.courseCard.banners.courseHasNotStarted": "Bạn chưa thể truy cập khóa học này vì khóa học chưa bắt đầu. Khóa học sẽ bắt đầu vào {startDate}."
 }
