@@ -1,13 +1,13 @@
 {
-    "learner-dash.courseListFilters.inProgress": "Trong tiến trình",
+    "learner-dash.courseListFilters.inProgress": "Đang theo học",
     "learner-dash.courseListFilters.notStarted": "Chưa bắt đầu",
-    "learner-dash.courseListFilters.done": "Xong",
+    "learner-dash.courseListFilters.done": "Đã hoàn thành",
     "learner-dash.courseListFilters.notEnrolled": "Chưa đăng ký",
-    "learner-dash.courseListFilters.upgraded": "Đã cập nhật",
-    "learner-dash.courseListFilters.clearAll": "Xóa sạch tất cả",
+    "learner-dash.courseListFilters.upgraded": "Đã nâng cấp",
+    "learner-dash.courseListFilters.clearAll": "Xóa tất cả",
     "learner-dash.courseListFilters.sort": "Lọc",
-    "learner-dash.courseListFilters.sortLastEnrolled": "Đăng ký lần cuối",
-    "learner-dash.courseListFilters.sortTitle": "Tiêu đề (A-Z)",
+    "learner-dash.courseListFilters.sortLastEnrolled": "Theo đăng ký mới",
+    "learner-dash.courseListFilters.sortTitle": "Theo tiêu đề (A-Z)",
     "learner-dash.courseListFilters.refine": "Lọc",
     "dashboard.mycourses": "Khóa học của tôi",
     "leanerDashboard.enterpriseDialogHeader": "Bạn có quyền truy cập vào bang điều khiển {label}",
@@ -21,7 +21,7 @@
     "learnerVariantDashboard.menu.profile.label": "Hồ sơ",
     "learnerVariantDashboard.menu.viewPrograms.label": "Xem chương trình",
     "learnerVariantDashboard.menu.account.label": "Tài khoản",
-    "learnerVariantDashboard.menu.orderHistory.label": "lịch sử đơn hàng",
+    "learnerVariantDashboard.menu.orderHistory.label": "Lịch sử đơn hàng",
     "learnerVariantDashboard.menu.signOut.label": "Đăng xuất",
     "learnerVariantDashboard.course": "Khóa học",
     "learnerVariantDashboard.program": "Chương trình",
@@ -67,5 +67,6 @@
     "leanerDashboard.confirmEmailModalBody": "Chúng tôi đã gửi cho bạn một email để xác thực tài khoản của bạn. Vui lòng kiểm tra hộp thư đến của bạn và nhấp vào nút lớn màu đỏ để xác nhận và tiếp tục tìm hiểu.",
     "leanerDashboard.confirmEmailImageAlt": "Xác nhận nền email",
     "learner-dash.courseCard.banners.courseHasNotStarted": "Bạn chưa thể truy cập khóa học này vì khóa học chưa bắt đầu. Khóa học sẽ bắt đầu vào {startDate}.",
-    "learner-dash.title": "Trang chủ người học"
+    "learner-dash.title": "Trang chủ người học",
+    "learner-dash.courseCardMenu.unenroll": "Hủy đăng ký"
 }
