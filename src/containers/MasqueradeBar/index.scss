@@ -36,3 +36,9 @@
     padding: map-get($spacers, 3) map-get($spacers, 4);
   }
 }
+
+@media screen and (max-width: 950px) {
+  .masquerade-bar .masquerade-form-label {
+    display: none;
+  }
+}
