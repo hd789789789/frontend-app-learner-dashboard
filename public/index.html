@@ -6,21 +6,5 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      setInterval(() => {
-          [
-              {
-                  selector:
-                      '#dashboard-content > div > div:nth-child(1) > div.course-list-column.col-xl-8.col-lg-12.offset-xl-0.offset-lg-0 > div > div.d-flex.flex-column.flex-grow-1 > nav > ul > div',
-                  content: 'of',
-                  replacement: '/',
-              },
-          ].forEach((item) => {
-              const element = document.querySelector(item.selector);
-              if (element && element.innerHTML.indexOf(item.content) != -1)
-                  element.innerHTML = element.innerHTML.replace(item.content, item.replacement);
-          });
-      }, 500);
-  </script>
   </body>
 </html>
