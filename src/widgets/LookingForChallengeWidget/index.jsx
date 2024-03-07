@@ -34,7 +34,7 @@ export const LookingForChallengeWidget = () => {
             onClick={track.findCoursesWidgetClicked(baseAppUrl(courseSearchUrl))}
             className="d-flex align-items-center"
           >
-            {formatMessage(messages.findCoursesButton, { arrow: arrowIcon })}
+            {/* {formatMessage(messages.findCoursesButton, { arrow: arrowIcon })} */}
           </Hyperlink>
         </h5>
       </Card.Body>
