@@ -1,10 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            .wrapper-footer {
+                padding: 25px 0;
+                border-top: 1px solid #e5e7eb;
+            }
+            footer.tutor-container {
+                margin: 0 auto;
+                padding: 0 15px;
+                max-width: 1090px;
+                text-align: center;
+                .footer-top {
+                    margin: 0 0 15px;
+                    &:after {
+                        clear: both;
+                        display: block;
+                        content: "";
+                    }
+                    .powered-area {
+                        margin: 0 0 10px;
+                    }
+                }
+                .logo-list {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    letter-spacing: -0.3em;
+                    li {
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding: 0 5px;
+                        letter-spacing: normal;
+                        position: relative;
+                        font-size: 12px;
+                        line-height: 18px;
+                        color: #6b7280;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        &:last-child {
+                            padding-left: 20px;
+                            &:after {
+                                position: absolute;
+                                left: 5px;
+                                top: 50%;
+                                content: "";
+                                width: 1px;
+                                height: 29px;
+                                margin: -14px 0 0;
+                                background: #6b7280;
+                            }
+                        }
+                    }
+                }
+                .nav-colophon {
+                    display: block;
+                    overflow: hidden;
+                    ol {
+                        text-align: center;
+                        li {
+                            display: inline-block;
+                            vertical-align: top;
+                            padding: 0 8px;
+                            font-size: 14px;
+                            line-height: 20px;
+                            a {
+                                color: black;
+                                text-decoration: none;
+                                &:hover {
+                                    color: black;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .copyright-site {
+                    display: block;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: black;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <div class="wrapper wrapper-footer" style="font-size: 12px">
+        <footer id="footer" class="tutor-container">
+            <div class="footer-top">
+                <nav class="nav-colophon">
+                    <ol>
+                        <li style="font-size: 12px">
+                            <a href="https://hoctap.vn/about">Về chúng tôi</a>
+                        </li>
+
+                        <li style="font-size: 12px">
+                            <a href="https://hoctap.vn/blog">Blog</a>
+                        </li>
+
+                        <li style="font-size: 12px">
+                            <a href="https://hoctap.vn/donate">Ủng hộ</a>
+                        </li>
+
+                        <li style="font-size: 12px">
+                            <a href="https://hoctap.vn/tos">Điều khoản dịch vụ</a>
+                        </li>
+
+                        <li style="font-size: 12px">
+                            <a href="https://hoctap.vn/privacy">Chính sách bảo mật</a>
+                        </li>
+
+                        <li style="font-size: 12px">
+                            <a href="https://hoctap.vn/help">Trợ giúp</a>
+                        </li>
+
+                        <li style="font-size: 12px">
+                            <a href="https://hoctap.vn/contact">Liên hệ</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <span class="copyright-site">(c) Hoctap.vn - Powered by Tutor | OpenEdX</span>
+        </footer>
+    </div>
 </html>
