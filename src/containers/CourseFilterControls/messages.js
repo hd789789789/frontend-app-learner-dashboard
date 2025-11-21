@@ -4,57 +4,57 @@ const messages = defineMessages({
   courseStatus: {
     id: 'learner-dash.courseListFilters.courseStatus',
     description: 'course status filter form heading',
-    defaultMessage: 'Course Status',
+    defaultMessage: 'Trạng thái khóa học',
   },
   inProgress: {
     id: 'learner-dash.courseListFilters.inProgress',
     description: 'in-progress filter checkbox label for course list filters',
-    defaultMessage: 'In-Progress',
+    defaultMessage: 'Đang học',
   },
   notStarted: {
     id: 'learner-dash.courseListFilters.notStarted',
     description: 'Not-Started filter checkbox label for course list filters',
-    defaultMessage: 'Not Started',
+    defaultMessage: 'Chưa bắt đầu',
   },
   done: {
     id: 'learner-dash.courseListFilters.done',
     description: 'done filter checkbox label for course list filters',
-    defaultMessage: 'Done',
+    defaultMessage: 'Đã hoàn thành',
   },
   notEnrolled: {
     id: 'learner-dash.courseListFilters.notEnrolled',
     description: 'not-enrolled filter checkbox label for course list filters',
-    defaultMessage: 'Not Enrolled',
+    defaultMessage: 'Chưa ghi danh',
   },
   upgraded: {
     id: 'learner-dash.courseListFilters.upgraded',
     description: 'upgraded filter checkbox label for course list filters',
-    defaultMessage: 'Upgraded',
+    defaultMessage: 'Đã nâng cấp',
   },
   clearAll: {
     id: 'learner-dash.courseListFilters.clearAll',
     description: 'clear all filters button text',
-    defaultMessage: 'Clear all',
+    defaultMessage: 'Xóa tất cả',
   },
   sort: {
     id: 'learner-dash.courseListFilters.sort',
     description: 'Sort radio form heading',
-    defaultMessage: 'Sort',
+    defaultMessage: 'Sắp xếp',
   },
   sortLastEnrolled: {
     id: 'learner-dash.courseListFilters.sortLastEnrolled',
     description: 'Last enrolled sort option text',
-    defaultMessage: 'Last enrolled',
+    defaultMessage: 'Ghi danh gần nhất',
   },
   sortTitle: {
     id: 'learner-dash.courseListFilters.sortTitle',
     description: 'Title sort option text',
-    defaultMessage: 'Title (A-Z)',
+    defaultMessage: 'Tiêu đề (A-Z)',
   },
   refine: {
     id: 'learner-dash.courseListFilters.refine',
     description: 'Filter button container text',
-    defaultMessage: 'Refine',
+    defaultMessage: 'Lọc',
   },
 });
 

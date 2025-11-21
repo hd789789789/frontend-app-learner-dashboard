@@ -5,12 +5,12 @@ const messages = defineMessages({
   header: {
     id: 'learner-dash.relatedPrograms.header',
     description: 'Header for related settings modal',
-    defaultMessage: 'Related Programs',
+    defaultMessage: 'Chương trình liên quan',
   },
   description: {
     id: 'learner-dash.relatedPrograms.description',
     description: 'Description for related settings modal',
-    defaultMessage: `Are you looking to expand your knowledge?  Enrolling in a Program lets you take a series of courses in the subject that you're interested in`,
+    defaultMessage: `Bạn đang muốn mở rộng kiến thức của mình? Ghi danh vào một Chương trình cho phép bạn học một loạt các khóa học về chủ đề mà bạn quan tâm`,
   },
 });
 

@@ -4,57 +4,57 @@ const messages = defineMessages({
   approved: {
     id: 'learner-dash.courseCard.banners.credit.approved',
     description: '',
-    defaultMessage: '{congratulations} {providerName} has approved your request for course credit. To see your course credit, visit the {linkToProviderSite} website.',
+    defaultMessage: '{congratulations} {providerName} đã chấp thuận yêu cầu tín chỉ khóa học của bạn. Để xem tín chỉ khóa học của bạn, hãy truy cập trang web {linkToProviderSite}.',
   },
   congratulations: {
     id: 'learner-dash.courseCard.banners.credit.congratulations',
     description: '',
-    defaultMessage: 'Congratulations!',
+    defaultMessage: 'Chúc mừng!',
   },
   eligible: {
     id: 'learner-dash.courseCard.banners.credit.eligible',
     description: '',
-    defaultMessage: 'You have completed this course and are eligible to purchase course credit.  Select {getCredit} to get started.',
+    defaultMessage: 'Bạn đã hoàn thành khóa học này và đủ điều kiện để mua tín chỉ khóa học. Chọn {getCredit} để bắt đầu.',
   },
   eligibleFromProvider: {
     id: 'learner-dash.courseCard.banners.credit.eligibleFromProvider',
     description: '',
-    defaultMessage: 'You are now eligible for credit from {providerName}. Congratulations!',
+    defaultMessage: 'Bạn hiện đã đủ điều kiện nhận tín chỉ từ {providerName}. Chúc mừng!',
   },
   getCredit: {
     id: 'learner-dash.courseCard.banners.credit.getCredit',
     description: '',
-    defaultMessage: 'Get Credit',
+    defaultMessage: 'Nhận tín chỉ',
   },
   mustRequest: {
     id: 'learner-dash.courseCard.banners.credit.mustRequest',
     description: '',
-    defaultMessage: 'Thank you for your payment.  To receive course credit, you must request credit at the {linkToProviderSite} website.  Select {requestCredit} to get started',
+    defaultMessage: 'Cảm ơn bạn đã thanh toán. Để nhận tín chỉ khóa học, bạn phải yêu cầu tín chỉ tại trang web {linkToProviderSite}. Chọn {requestCredit} để bắt đầu',
   },
   received: {
     id: 'learner-dash.courseCard.banners.credit.received',
     description: '',
-    defaultMessage: '{providerName} has received your course credit request.  We will update you when credit processing is complete.',
+    defaultMessage: '{providerName} đã nhận được yêu cầu tín chỉ khóa học của bạn. Chúng tôi sẽ cập nhật cho bạn khi quá trình xử lý tín chỉ hoàn tất.',
   },
   rejected: {
     id: 'learner-dash.courseCard.banners.credit.rejected',
     description: '',
-    defaultMessage: '{providerName} did not approve your request for course credit.  For more information, contact {linkToProviderSite} directly.',
+    defaultMessage: '{providerName} đã không chấp thuận yêu cầu tín chỉ khóa học của bạn. Để biết thêm thông tin, vui lòng liên hệ trực tiếp với {linkToProviderSite}.',
   },
   requestCredit: {
     id: 'learner-dash.courseCard.banners.credit.requestCredit',
     description: '',
-    defaultMessage: 'Request Credit',
+    defaultMessage: 'Yêu cầu tín chỉ',
   },
   viewCredit: {
     id: 'learner-dash.courseCard.banners.credit.viewCredit',
     description: '',
-    defaultMessage: 'View Credit',
+    defaultMessage: 'Xem tín chỉ',
   },
   viewDetails: {
     id: 'learner-dash.courseCard.banners.credit.viewDetails',
     description: '',
-    defaultMessage: 'View Details',
+    defaultMessage: 'Xem chi tiết',
   },
 });
 

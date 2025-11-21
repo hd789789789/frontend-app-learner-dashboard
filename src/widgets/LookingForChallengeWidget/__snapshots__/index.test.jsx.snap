@@ -25,7 +25,7 @@ exports[`LookingForChallengeWidget snapshots default 1`] = `
         <format-message-function
           message={
             {
-              "defaultMessage": "Find a course {arrow}",
+              "defaultMessage": "Tìm khóa học {arrow}",
               "description": "Button to explore more courses",
               "id": "WidgetSidebar.findCoursesButton",
             }

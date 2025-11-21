@@ -1,17 +1,17 @@
 export const messages = {
   courses: {
     id: 'learnerDashboard.programCard.courses',
-    defaultMessage: '{numCourses} Courses',
+    defaultMessage: '{numCourses} Khóa học',
     description: 'Number of courses in a program, displayed at the bottom of program card',
   },
   duration: {
     id: 'learnerDashboard.programCard.duration',
-    defaultMessage: '{numWeeks} Weeks',
+    defaultMessage: '{numWeeks} Tuần',
     description: 'Number of weeks in a program, displayed at the bottom of program card',
   },
   logoAlt: {
     id: 'learnerDashboard.programCard.logoAlt',
-    defaultMessage: '{provider} logo',
+    defaultMessage: 'Logo {provider}',
     description: 'Program provider logo alt-text',
   },
   bannerAlt: {

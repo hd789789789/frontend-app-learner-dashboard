@@ -11,7 +11,7 @@ exports[`CreditBanner component render with error state snapshot 1`] = `
     <format-message-function
       message={
         {
-          "defaultMessage": "An error occurred with this transaction.  For help, contact {supportEmailLink}.",
+          "defaultMessage": "Đã xảy ra lỗi với giao dịch này. Để được trợ giúp, vui lòng liên hệ {supportEmailLink}.",
           "description": "",
           "id": "learner-dash.courseCard.banners.credit.error",
         }

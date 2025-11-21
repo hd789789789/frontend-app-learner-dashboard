@@ -10,7 +10,7 @@ exports[`ConfirmEmailBanner snapshot Show on unverified 1`] = `
     <format-message-function
       message={
         {
-          "defaultMessage": "Remember to confirm your email so that you can keep learning! {confirmNowButton}.",
+          "defaultMessage": "Hãy nhớ xác nhận email của bạn để có thể tiếp tục học! {confirmNowButton}.",
           "description": "Text for reminding user to confirm email",
           "id": "leanerDashboard.confirmEmailTextReminderBanner",
         }

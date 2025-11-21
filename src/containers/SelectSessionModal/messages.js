@@ -5,37 +5,37 @@ const messages = defineMessages({
   changeOrLeaveHeader: {
     id: 'learner-dash.selectSession.changeOrLeaveHeader',
     description: 'Header for session that allow leave option',
-    defaultMessage: 'Change or leave session?',
+    defaultMessage: 'Thay đổi hoặc rời phiên học?',
   },
   selectSessionHeader: {
     id: 'learner-dash.selectSession.selectSessionHeader',
     description: 'Header for unfulfilled entitlement',
-    defaultMessage: 'Select a session',
+    defaultMessage: 'Chọn một phiên học',
   },
   changeOrLeaveHint: {
     id: 'learner-dash.selectSession.changeOrLeaveHint',
     description: 'Hint for session that allow leave option',
-    defaultMessage: 'When you change to a different session any course progress or grades from your current session will be lost.',
+    defaultMessage: 'Khi bạn chuyển sang phiên học khác, mọi tiến độ khóa học hoặc điểm từ phiên học hiện tại của bạn sẽ bị mất.',
   },
   selectSessionHint: {
     id: 'learner-dash.selectSession.selectSessionHint',
     description: 'Hint for session that does not allow leave option',
-    defaultMessage: 'Remember, if you change your mind you have 2 weeks to unenroll and select a different session.',
+    defaultMessage: 'Hãy nhớ, nếu bạn thay đổi ý định, bạn có 2 tuần để hủy ghi danh và chọn một phiên học khác.',
   },
   leaveSessionOption: {
     id: 'learner-dash.selectSession.leaveSessionOption',
     description: 'Radio option for leave session',
-    defaultMessage: 'Leave session',
+    defaultMessage: 'Rời phiên học',
   },
   nevermind: {
     id: 'learner-dash.selectSession.nevermind',
     description: 'Cancel action for select session modal',
-    defaultMessage: 'Never mind',
+    defaultMessage: 'Không sao',
   },
   confirmSession: {
     id: 'learner-dash.selectSession.confirmSession',
     description: 'Confirm action for select session modal',
-    defaultMessage: 'Confirm Session',
+    defaultMessage: 'Xác nhận phiên học',
   },
 });
 

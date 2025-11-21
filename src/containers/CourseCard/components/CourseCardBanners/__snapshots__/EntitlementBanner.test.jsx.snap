@@ -5,7 +5,7 @@ exports[`EntitlementBanner snapshot: expiration warning 1`] = `
   <format-message-function
     message={
       {
-        "defaultMessage": "You must {selectSessionButton} by {changeDeadline} to access the course.",
+        "defaultMessage": "Bạn phải {selectSessionButton} trước {changeDeadline} để truy cập khóa học.",
         "description": "Entitlement course message when the entitlement is expiring soon.",
         "id": "learner-dash.courseCard.banners.entitlementExpiringSoon",
       }
@@ -34,7 +34,7 @@ exports[`EntitlementBanner snapshot: no sessions available 1`] = `
   <format-message-function
     message={
       {
-        "defaultMessage": "There are no sessions available at the moment.  The course team will create new sessions soon.  If no sessions appear, please contact {emailLink} for information.",
+        "defaultMessage": "Hiện không có phiên học nào. Đội ngũ khóa học sẽ tạo phiên học mới sớm. Nếu không có phiên học nào xuất hiện, vui lòng liên hệ {emailLink} để biết thông tin.",
         "description": "Entitlement course message when no sessions are available",
         "id": "learner-dash.courseCard.banners.entitlementUnavailable",
       }
