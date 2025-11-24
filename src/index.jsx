@@ -29,6 +29,8 @@ import messages from './i18n';
 import App from './App';
 import NoticesWrapper from './components/NoticesWrapper';
 
+import { TextReplacerProvider } from "./components/text-replacer/TextReplacer";
+
 subscribe(APP_READY, () => {
   const root = createRoot(document.getElementById('root'));
 
