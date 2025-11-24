@@ -36,10 +36,12 @@ subscribe(APP_READY, () => {
     <StrictMode>
       <AppProvider store={store}>
         <NoticesWrapper>
-          <Routes>
-            <Route path="/" element={<PageWrap><App /></PageWrap>} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+        <TextReplacerProvider>
+            <Routes>
+              <Route path="/" element={<PageWrap><App /></PageWrap>} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </TextReplacerProvider>
         </NoticesWrapper>
       </AppProvider>
     </StrictMode>,
