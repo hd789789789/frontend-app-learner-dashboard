@@ -44,6 +44,9 @@ const useTextReplacer = () => {
         const replaceDates = (node = document.body) => {
             const replaceInTextNode = (textNode) => {
                 let text = textNode.textContent;
+                if (text.includes("January") || text.includes("Tháng")) {
+                    console.log("Text node:", text);
+                }
                 let modified = false;
 
                 // Pattern 1: "Mon, Nov 24, 2025" hoặc "Monday, November 24, 2025"
