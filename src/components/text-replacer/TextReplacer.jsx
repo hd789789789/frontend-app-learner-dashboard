@@ -81,7 +81,11 @@ const useTextReplacer = () => {
                 const pattern2_5 =
                     /\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2}),?\s+(\d{4})\b/gi;
 
+                console.log("Testing pattern2_5 on:", text);
+                console.log("Pattern match:", text.match(pattern2_5));
+
                 const newText = text.replace(pattern2_5, (match, monthName, day, year) => {
+                    console.log("Matched:", match, "Month:", monthName, "Day:", day, "Year:", year);
                     try {
                         const monthMap = {
                             January: "01",
@@ -110,16 +114,14 @@ const useTextReplacer = () => {
                         };
                         const month = monthMap[monthName];
                         const dayPadded = day.toString().padStart(2, "0");
-                        return `${dayPadded}/${month}/${year}`;
+                        const result = `${dayPadded}/${month}/${year}`;
+                        console.log("Replacing with:", result);
+                        return result;
                     } catch (e) {
+                        console.log("Error:", e);
                         return match;
                     }
                 });
-
-                if (newText !== text) {
-                    text = newText;
-                    modified = true;
-                }
 
                 // Pattern 3: Các tháng tiếng Anh riêng lẻ
                 // const monthReplacements = {
