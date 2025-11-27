@@ -4,29 +4,26 @@ const useTextReplacer = () => {
     useEffect(() => {
         // Function format date
         const formatDateToVietnamese = (dateString) => {
-            if (!dateString) return '';
-            
+            if (!dateString) return "";
+
             const date = new Date(dateString);
             if (isNaN(date.getTime())) return dateString;
-            
-            const daysOfWeek = [
-                'Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư',
-                'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'
-            ];
-            
+
+            const daysOfWeek = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+
             const dayOfWeek = daysOfWeek[date.getDay()];
             const day = date.getDate();
             const month = date.getMonth() + 1;
             const year = date.getFullYear();
-            
-            return `${dayOfWeek}, ${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
+
+            return `${dayOfWeek}, ${day.toString().padStart(2, "0")}/${month.toString().padStart(2, "0")}/${year}`;
         };
 
         const translations = [
             {
                 selector: 'a.nav-link[href*="/dates"]',
-                replacements: { 'ngày': "Ngày" },
-            }
+                replacements: { ngày: "Ngày" },
+            },
         ];
 
         // Function thay thế text theo selector
@@ -50,8 +47,9 @@ const useTextReplacer = () => {
                 let modified = false;
 
                 // Pattern 1: "Mon, Nov 24, 2025" hoặc "Monday, November 24, 2025"
-                const pattern1 = /\b(Mon|Monday|Tue|Tuesday|Wed|Wednesday|Thu|Thursday|Fri|Friday|Sat|Saturday|Sun|Sunday),?\s+(Jan|January|Feb|February|Mar|March|Apr|April|May|Jun|June|Jul|July|Aug|August|Sep|September|Oct|October|Nov|November|Dec|December)\s+(\d{1,2}),?\s+(\d{4})\b/gi;
-                
+                const pattern1 =
+                    /\b(Mon|Monday|Tue|Tuesday|Wed|Wednesday|Thu|Thursday|Fri|Friday|Sat|Saturday|Sun|Sunday),?\s+(Jan|January|Feb|February|Mar|March|Apr|April|May|Jun|June|Jul|July|Aug|August|Sep|September|Oct|October|Nov|November|Dec|December)\s+(\d{1,2}),?\s+(\d{4})\b/gi;
+
                 if (pattern1.test(text)) {
                     text = text.replace(pattern1, (match) => {
                         try {
@@ -76,53 +74,90 @@ const useTextReplacer = () => {
                     modified = true;
                 }
 
-                // Pattern 3: Các tháng tiếng Anh riêng lẻ
-                const monthReplacements = {
-                    'January': 'Tháng 1', 'February': 'Tháng 2', 'March': 'Tháng 3',
-                    'April': 'Tháng 4', 'May': 'Tháng 5', 'June': 'Tháng 6',
-                    'July': 'Tháng 7', 'August': 'Tháng 8', 'September': 'Tháng 9',
-                    'October': 'Tháng 10', 'November': 'Tháng 11', 'December': 'Tháng 12',
-                    'Jan': 'Th1', 'Feb': 'Th2', 'Mar': 'Th3', 'Apr': 'Th4',
-                    'Jun': 'Th6', 'Jul': 'Th7', 'Aug': 'Th8', 'Sep': 'Th9',
-                    'Oct': 'Th10', 'Nov': 'Th11', 'Dec': 'Th12'
-                };
-
-                Object.entries(monthReplacements).forEach(([eng, viet]) => {
-                    const regex = new RegExp(`\\b${eng}\\b`, 'g');
-                    if (regex.test(text)) {
-                        text = text.replace(regex, viet);
-                        modified = true;
-                    }
-                });
-
-                if (modified) {
-                    textNode.textContent = text;
+                // Pattern 2.5: "January 1, 2030" hoặc "Jan 1, 2030" → dd/mm/yyyy
+                const pattern2_5 =
+                    /\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2}),?\s+(\d{4})\b/gi;
+                if (pattern2_5.test(text)) {
+                    text = text.replace(pattern2_5, (match, monthName, day, year) => {
+                        try {
+                            const monthMap = {
+                                January: "01",
+                                February: "02",
+                                March: "03",
+                                April: "04",
+                                May: "05",
+                                June: "06",
+                                July: "07",
+                                August: "08",
+                                September: "09",
+                                October: "10",
+                                November: "11",
+                                December: "12",
+                                Jan: "01",
+                                Feb: "02",
+                                Mar: "03",
+                                Apr: "04",
+                                Jun: "06",
+                                Jul: "07",
+                                Aug: "08",
+                                Sep: "09",
+                                Oct: "10",
+                                Nov: "11",
+                                Dec: "12",
+                            };
+                            const month = monthMap[monthName];
+                            const dayPadded = day.toString().padStart(2, "0");
+                            return `${dayPadded}/${month}/${year}`;
+                        } catch (e) {
+                            return match;
+                        }
+                    });
+                    modified = true;
                 }
+
+                // Pattern 3: Các tháng tiếng Anh riêng lẻ
+                // const monthReplacements = {
+                //     'January': 'Tháng 1', 'February': 'Tháng 2', 'March': 'Tháng 3',
+                //     'April': 'Tháng 4', 'May': 'Tháng 5', 'June': 'Tháng 6',
+                //     'July': 'Tháng 7', 'August': 'Tháng 8', 'September': 'Tháng 9',
+                //     'October': 'Tháng 10', 'November': 'Tháng 11', 'December': 'Tháng 12',
+                //     'Jan': 'Th1', 'Feb': 'Th2', 'Mar': 'Th3', 'Apr': 'Th4',
+                //     'Jun': 'Th6', 'Jul': 'Th7', 'Aug': 'Th8', 'Sep': 'Th9',
+                //     'Oct': 'Th10', 'Nov': 'Th11', 'Dec': 'Th12'
+                // };
+
+                // Object.entries(monthReplacements).forEach(([eng, viet]) => {
+                //     const regex = new RegExp(`\\b${eng}\\b`, 'g');
+                //     if (regex.test(text)) {
+                //         text = text.replace(regex, viet);
+                //         modified = true;
+                //     }
+                // });
+
+                // if (modified) {
+                //     textNode.textContent = text;
+                // }
             };
 
             // Duyệt qua các text nodes
-            const walker = document.createTreeWalker(
-                node,
-                NodeFilter.SHOW_TEXT,
-                {
-                    acceptNode: (node) => {
-                        // Bỏ qua script, style tags
-                        const parent = node.parentElement;
-                        if (parent && (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')) {
-                            return NodeFilter.FILTER_REJECT;
-                        }
-                        // Chỉ xử lý node có nội dung
-                        if (node.textContent.trim().length > 0) {
-                            return NodeFilter.FILTER_ACCEPT;
-                        }
+            const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, {
+                acceptNode: (node) => {
+                    // Bỏ qua script, style tags
+                    const parent = node.parentElement;
+                    if (parent && (parent.tagName === "SCRIPT" || parent.tagName === "STYLE")) {
                         return NodeFilter.FILTER_REJECT;
                     }
-                }
-            );
+                    // Chỉ xử lý node có nội dung
+                    if (node.textContent.trim().length > 0) {
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                    return NodeFilter.FILTER_REJECT;
+                },
+            });
 
             const textNodes = [];
             let currentNode;
-            while (currentNode = walker.nextNode()) {
+            while ((currentNode = walker.nextNode())) {
                 textNodes.push(currentNode);
             }
 
@@ -136,14 +171,12 @@ const useTextReplacer = () => {
         };
 
         // Chạy nhiều lần để đảm bảo DOM đã load
-        const timeouts = [0, 100, 300, 500, 1000].map((delay) => 
-            setTimeout(replaceAll, delay)
-        );
+        const timeouts = [0, 100, 300, 500, 1000].map((delay) => setTimeout(replaceAll, delay));
 
         // Observer để theo dõi DOM changes
         const observer = new MutationObserver((mutations) => {
             replaceTexts();
-            
+
             // Chỉ replace date cho nodes mới thêm vào
             mutations.forEach((mutation) => {
                 mutation.addedNodes.forEach((node) => {
