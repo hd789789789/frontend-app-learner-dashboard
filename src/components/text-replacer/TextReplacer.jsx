@@ -81,9 +81,6 @@ const useTextReplacer = () => {
                 const pattern2_5 =
                     /\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2}),?\s+(\d{4})\b/gi;
 
-                console.log("Testing pattern2_5 on:", text);
-                console.log("Pattern match:", text.match(pattern2_5));
-
                 const newText = text.replace(pattern2_5, (match, monthName, day, year) => {
                     console.log("Matched:", match, "Month:", monthName, "Day:", day, "Year:", year);
                     try {
@@ -123,6 +120,11 @@ const useTextReplacer = () => {
                     }
                 });
 
+                if (newText !== text) {
+                    text = newText; // ← THÊM DÒNG NÀY
+                    modified = true;
+                }
+
                 // Pattern 3: Các tháng tiếng Anh riêng lẻ
                 // const monthReplacements = {
                 //     'January': 'Tháng 1', 'February': 'Tháng 2', 'March': 'Tháng 3',
@@ -145,6 +147,9 @@ const useTextReplacer = () => {
                 // if (modified) {
                 //     textNode.textContent = text;
                 // }
+                if (modified) {
+                    textNode.textContent = text;
+                }
             };
 
             // Duyệt qua các text nodes
