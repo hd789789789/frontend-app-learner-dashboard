@@ -77,41 +77,44 @@ const useTextReplacer = () => {
                 // Pattern 2.5: "January 1, 2030" hoặc "Jan 1, 2030" → dd/mm/yyyy
                 const pattern2_5 =
                     /\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2}),?\s+(\d{4})\b/gi;
-                if (pattern2_5.test(text)) {
-                    text = text.replace(pattern2_5, (match, monthName, day, year) => {
-                        try {
-                            const monthMap = {
-                                January: "01",
-                                February: "02",
-                                March: "03",
-                                April: "04",
-                                May: "05",
-                                June: "06",
-                                July: "07",
-                                August: "08",
-                                September: "09",
-                                October: "10",
-                                November: "11",
-                                December: "12",
-                                Jan: "01",
-                                Feb: "02",
-                                Mar: "03",
-                                Apr: "04",
-                                Jun: "06",
-                                Jul: "07",
-                                Aug: "08",
-                                Sep: "09",
-                                Oct: "10",
-                                Nov: "11",
-                                Dec: "12",
-                            };
-                            const month = monthMap[monthName];
-                            const dayPadded = day.toString().padStart(2, "0");
-                            return `${dayPadded}/${month}/${year}`;
-                        } catch (e) {
-                            return match;
-                        }
-                    });
+
+                const newText = text.replace(pattern2_5, (match, monthName, day, year) => {
+                    try {
+                        const monthMap = {
+                            January: "01",
+                            February: "02",
+                            March: "03",
+                            April: "04",
+                            May: "05",
+                            June: "06",
+                            July: "07",
+                            August: "08",
+                            September: "09",
+                            October: "10",
+                            November: "11",
+                            December: "12",
+                            Jan: "01",
+                            Feb: "02",
+                            Mar: "03",
+                            Apr: "04",
+                            Jun: "06",
+                            Jul: "07",
+                            Aug: "08",
+                            Sep: "09",
+                            Oct: "10",
+                            Nov: "11",
+                            Dec: "12",
+                        };
+                        const month = monthMap[monthName];
+                        const dayPadded = day.toString().padStart(2, "0");
+                        return `${dayPadded}/${month}/${year}`;
+                    } catch (e) {
+                        return match;
+                    }
+                });
+
+                if (newText !== text) {
+                    text = newText;
                     modified = true;
                 }
 
