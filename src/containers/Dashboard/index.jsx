@@ -18,19 +18,27 @@ export const Dashboard = () => {
   const hasCourses = reduxHooks.useHasCourses();
   const initIsPending = reduxHooks.useRequestIsPending(RequestKeys.initialize);
   const showSelectSessionModal = reduxHooks.useShowSelectSessionModal();
-  const courses = reduxHooks.useCourses();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [selectedCourseId, setSelectedCourseId] = useState(null);
 
-  // Get first enrolled course ID for chat
+  // Get course list data
+  const { visibleList } = reduxHooks.useCurrentCourseList({
+    sortBy: 'enrolled',
+    filters: [],
+    pageSize: 0, // Get all courses
+  });
+
+  // Get courseId from first course card if available
+  const firstCardId = visibleList && visibleList.length > 0 ? visibleList[0].cardId : null;
+  const firstCourseRunData = firstCardId ? reduxHooks.useCardCourseRunData(firstCardId) : null;
+  const firstCourseId = firstCourseRunData?.courseId;
+
+  // Set selected course ID when available
   React.useEffect(() => {
-    if (courses && courses.length > 0 && !selectedCourseId) {
-      const firstCourse = courses[0];
-      if (firstCourse && firstCourse.courseId) {
-        setSelectedCourseId(firstCourse.courseId);
-      }
+    if (firstCourseId && !selectedCourseId) {
+      setSelectedCourseId(firstCourseId);
     }
-  }, [courses, selectedCourseId]);
+  }, [firstCourseId, selectedCourseId]);
 
   return (
     <div id="dashboard-container" className="d-flex flex-column p-2 pt-0">
