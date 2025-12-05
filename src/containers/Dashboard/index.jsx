@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { reduxHooks } from 'hooks';
 import { RequestKeys } from 'data/constants/requests';
 import SelectSessionModal from 'containers/SelectSessionModal';
 import CoursesPanel from 'containers/CoursesPanel';
 import DashboardModalSlot from 'plugin-slots/DashboardModalSlot';
+import LearnerChat from 'containers/LearnerChat';
 
 import LoadingView from './LoadingView';
 import DashboardLayout from './DashboardLayout';
@@ -17,6 +18,19 @@ export const Dashboard = () => {
   const hasCourses = reduxHooks.useHasCourses();
   const initIsPending = reduxHooks.useRequestIsPending(RequestKeys.initialize);
   const showSelectSessionModal = reduxHooks.useShowSelectSessionModal();
+  const courses = reduxHooks.useCourses();
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [selectedCourseId, setSelectedCourseId] = useState(null);
+
+  // Get first enrolled course ID for chat
+  React.useEffect(() => {
+    if (courses && courses.length > 0 && !selectedCourseId) {
+      const firstCourse = courses[0];
+      if (firstCourse && firstCourse.courseId) {
+        setSelectedCourseId(firstCourse.courseId);
+      }
+    }
+  }, [courses, selectedCourseId]);
 
   return (
     <div id="dashboard-container" className="d-flex flex-column p-2 pt-0">
@@ -36,6 +50,24 @@ export const Dashboard = () => {
             </DashboardLayout>
           )}
       </div>
+      {selectedCourseId && (
+        <>
+          <LearnerChat
+            courseId={selectedCourseId}
+            isOpen={isChatOpen}
+            onClose={() => setIsChatOpen(false)}
+          />
+          {!isChatOpen && (
+            <button
+              className="learner-chat-toggle-btn"
+              onClick={() => setIsChatOpen(true)}
+              title="Mở chat"
+            >
+              💬
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 };

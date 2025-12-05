@@ -44,9 +44,6 @@ const useTextReplacer = () => {
         const replaceDates = (node = document.body) => {
             const replaceInTextNode = (textNode) => {
                 let text = textNode.textContent;
-                if (text.includes("January") || text.includes("Tháng")) {
-                    console.log("Text node:", text);
-                }
                 let modified = false;
 
                 // Pattern 1: "Mon, Nov 24, 2025" hoặc "Monday, November 24, 2025"
@@ -82,7 +79,6 @@ const useTextReplacer = () => {
                     /\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2}),?\s+(\d{4})\b/gi;
 
                 const newText = text.replace(pattern2_5, (match, monthName, day, year) => {
-                    console.log("Matched:", match, "Month:", monthName, "Day:", day, "Year:", year);
                     try {
                         const monthMap = {
                             January: "01",
@@ -112,7 +108,6 @@ const useTextReplacer = () => {
                         const month = monthMap[monthName];
                         const dayPadded = day.toString().padStart(2, "0");
                         const result = `${dayPadded}/${month}/${year}`;
-                        console.log("Replacing with:", result);
                         return result;
                     } catch (e) {
                         console.log("Error:", e);
