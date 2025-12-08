@@ -22,8 +22,8 @@
 
   .pgn__card-wrapper-image-cap {
     overflow: visible;
-    min-width: 220px;
-    max-width: 240px;
+    min-width: 100%;
+    max-width: 100%;
     flex: 0 0 220px;
     display: flex;
     align-items: center;
@@ -55,4 +55,8 @@
       }
     }
   }
+}
+
+.sidebar-column.col-xl-4.col-lg-12.offset-xl-0.offset-lg-0{
+  min-width: 100% !important;
 }
