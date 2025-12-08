@@ -1,6 +1,7 @@
 @import "@openedx/paragon/scss/core/core";
 
 .course-list-container {
+  width: 100%;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 16px;
@@ -67,10 +68,24 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   width: 100%;
+  justify-items: stretch;
+  align-items: stretch;
 
   .course-card {
     margin: 0 !important;
     height: 100%;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .course-list-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .course-list-grid {
+    grid-template-columns: 1fr;
   }
 }
 
