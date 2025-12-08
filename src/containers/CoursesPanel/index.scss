@@ -64,28 +64,39 @@
 }
 
 .course-list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   width: 100%;
-  justify-items: stretch;
-  align-items: stretch;
+  justify-content: center;
 
   .course-card {
     margin: 0 !important;
     height: 100%;
+    flex: 1 1 360px;
+    max-width: 480px;
   }
 }
 
 @include media-breakpoint-down(lg) {
   .course-list-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+
+    .course-card {
+      flex: 1 1 320px;
+      max-width: 440px;
+    }
   }
 }
 
 @include media-breakpoint-down(md) {
   .course-list-grid {
-    grid-template-columns: 1fr;
+    justify-content: stretch;
+
+    .course-card {
+      flex: 1 1 100%;
+      max-width: none;
+    }
   }
 }
 
