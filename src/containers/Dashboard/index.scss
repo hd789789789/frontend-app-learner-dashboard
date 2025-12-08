@@ -16,6 +16,7 @@
 
 .sidebar-column {
   padding: 0 map-get($spacers, 3) 0 map-get($spacers, 1);
+  margin-top: map-get($spacers, 3);
 }
 
 @include media-breakpoint-down(lg) {
@@ -81,5 +82,10 @@
 @include media-breakpoint-down(md) {
   #dashboard-content {
     padding: 1.25rem 1rem 2rem;
+  }
+
+  .sidebar-column {
+    margin-top: map-get($spacers, 2);
+    padding: 0 map-get($spacers, 2);
   }
 }

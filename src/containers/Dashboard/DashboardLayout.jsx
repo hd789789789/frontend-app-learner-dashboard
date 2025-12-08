@@ -27,19 +27,16 @@ export const columnConfig = {
 export const DashboardLayout = ({ children }) => {
   const {
     isCollapsed,
-    sidebarShowing,
   } = hooks.useDashboardLayoutData();
-
-  const courseListColumnProps = sidebarShowing
-    ? columnConfig.courseList.withSidebar
-    : columnConfig.courseList.noSidebar;
 
   return (
     <Container fluid size="xl">
       <Row>
-        <Col {...courseListColumnProps} className="course-list-column">
+        <Col {...columnConfig.courseList.noSidebar} className="course-list-column">
           {children}
         </Col>
+      </Row>
+      <Row className="mt-3">
         <Col {...columnConfig.sidebar} className="sidebar-column">
           {!isCollapsed && (<h2 className="course-list-title">&nbsp;</h2>)}
           <WidgetSidebarSlot />
