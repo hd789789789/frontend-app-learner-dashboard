@@ -20,20 +20,20 @@ export const CourseCard = ({
     <div className="mb-4.5 course-card" id={cardId} data-testid="CourseCard">
       <Card orientation={orientation}>
         <div className="d-flex flex-column w-100">
-          <div>
+          <div className="course-card-shell">
             <CourseCardImage cardId={cardId} orientation="horizontal" />
-            <Card.Body>
-              <Card.Header
-                title={<CourseCardTitle cardId={cardId} />}
-                actions={<CourseCardMenu cardId={cardId} />}
-              />
-              <Card.Section className="pt-0">
+            <div className="course-card-body">
+              <div className="course-card-title-row">
+                <CourseCardTitle cardId={cardId} />
+                <CourseCardMenu cardId={cardId} />
+              </div>
+              <div className="course-card-meta-row">
                 <CourseCardDetails cardId={cardId} />
-              </Card.Section>
-              <Card.Footer orientation={orientation}>
+              </div>
+              <div className="course-card-actions-row">
                 <CourseCardActions cardId={cardId} />
-              </Card.Footer>
-            </Card.Body>
+              </div>
+            </div>
           </div>
           <CourseCardBanners cardId={cardId} />
         </div>

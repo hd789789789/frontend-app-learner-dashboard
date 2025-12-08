@@ -10,7 +10,7 @@
 
   .card {
     width: 100%;
-    max-width: 520px;
+    max-width: 420px;
     min-width: 0;
     height: 100%;
     border-radius: 16px;
@@ -32,7 +32,7 @@
       overflow: hidden;
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
-      height: 320px;
+      height: 260px;
 
       &.vertical {
         display: flex;
@@ -43,7 +43,7 @@
     .pgn__card-image-cap {
       display: block;
       width: 100%;
-      height: 320px;
+      height: 260px;
       object-fit: cover;
       border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
@@ -55,23 +55,49 @@
     }
 
     .pgn__card-body {
-      padding: 1.75rem 1.75rem 1.25rem;
+      padding: 1.5rem 1.5rem 1.1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.6rem;
       text-align: center;
+    }
 
-      h3 {
-        margin-bottom: 0.2rem;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--text-dark);
-      }
+    .course-card-shell {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--bg-primary);
+    }
 
-      .pgn__card-header-actions {
-        display: flex;
-        align-items: center;
+    .course-card-body {
+      padding: 1.25rem 1.25rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .course-card-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .course-card-meta-row {
+      font-size: 0.95rem;
+      color: var(--text-medium);
+    }
+
+    .course-card-actions-row {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .pgn__action-row {
+        width: 100%;
         justify-content: center;
       }
     }
@@ -81,7 +107,7 @@
       width: 100%;
 
       .pgn__card-header-content {
-        margin-top: 0.25rem;
+        margin-top: 0.35rem;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -113,7 +139,7 @@
 
     .pgn__card-section {
       padding-top: 0;
-      padding-bottom: 0.75rem;
+      padding-bottom: 0.9rem;
       color: var(--text-medium);
       width: 100%;
       display: flex;
@@ -243,11 +269,11 @@
       max-width: none;
 
       .pgn__card-image-cap {
-        height: 240px;
+        height: 220px;
       }
 
       .pgn__card-body {
-        padding: 1.5rem 1.25rem 1.1rem;
+        padding: 1.25rem 1rem 1rem;
       }
     }
   }
