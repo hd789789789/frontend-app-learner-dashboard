@@ -21,11 +21,13 @@ export const CourseList = ({ courseListData }) => {
           <ActiveCourseFilters {...filterOptions} />
         </div>
       )}
-      <div className="d-flex flex-column flex-grow-1">
+      <div className="course-list-grid flex-grow-1">
         {visibleList.map(({ cardId }) => (
           <CourseCard key={cardId} cardId={cardId} />
         ))}
-        {numPages > 1 && (
+      </div>
+      {numPages > 1 && (
+        <div className="course-list-pagination">
           <Pagination
             variant={isCollapsed ? 'reduced' : 'secondary'}
             paginationLabel="Course List"
@@ -33,8 +35,8 @@ export const CourseList = ({ courseListData }) => {
             pageCount={numPages}
             onPageSelect={setPageNumber}
           />
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };

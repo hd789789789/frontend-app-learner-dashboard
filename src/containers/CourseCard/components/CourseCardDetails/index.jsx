@@ -19,7 +19,7 @@ export const CourseCardDetails = ({ cardId }) => {
   } = useCardDetailsData({ cardId });
 
   return (
-    <span className="small" data-testid="CourseCardDetails">
+    <span className="course-card-meta small" data-testid="CourseCardDetails">
       {providerName} • {courseNumber}
       {!(isEntitlement && !isFulfilled) && accessMessage && (
         ` • ${accessMessage}`

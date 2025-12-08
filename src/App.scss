@@ -12,6 +12,79 @@ $input-focus-box-shadow: $input-box-shadow; // hack to get upgrade to paragon 4.
 @import "~@edx/frontend-component-header/dist/index";
 @import "~@edx/frontend-component-footer/dist/_footer";
 
+:root {
+  --bg-primary: #ffffff;
+  --bg-light: #f5f5f5;
+  --bg-gray: #fafafa;
+
+  --primary-color: #2196f3;
+  --primary-light: #64b5f6;
+  --primary-dark: #1976d2;
+
+  --accent-yellow: #ffc107;
+  --accent-yellow-light: #ffd54f;
+  --accent-red: #ff5252;
+  --accent-red-light: #ff8a80;
+  --accent-green: #4caf50;
+  --accent-green-light: #81c784;
+
+  --text-dark: #212121;
+  --text-medium: #424242;
+  --text-muted: #757575;
+  --text-light: #9e9e9e;
+
+  --border-color: #e0e0e0;
+  --border-light: #f0f0f0;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  --gradient-primary: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+  --gradient-success: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+  --gradient-warning: linear-gradient(135deg, #ffc107 0%, #ffd54f 100%);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1e1e1e;
+  --bg-light: #2d2d2d;
+  --bg-gray: #252525;
+
+  --primary-color: #42a5f5;
+  --primary-light: #90caf9;
+  --primary-dark: #1e88e5;
+
+  --accent-yellow: #ffd54f;
+  --accent-yellow-light: #ffe082;
+  --accent-red: #ff6b6b;
+  --accent-red-light: #ff8a80;
+  --accent-green: #66bb6a;
+  --accent-green-light: #81c784;
+
+  --text-dark: #e0e0e0;
+  --text-medium: #bdbdbd;
+  --text-muted: #9e9e9e;
+  --text-light: #757575;
+
+  --border-color: #404040;
+  --border-light: #353535;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--primary-color);
+}
+
 .text-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -54,6 +127,8 @@ $input-focus-box-shadow: $input-box-shadow; // hack to get upgrade to paragon 4.
 
   footer {
     flex: 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
   }
 }
 
@@ -70,4 +145,32 @@ $input-focus-box-shadow: $input-box-shadow; // hack to get upgrade to paragon 4.
 
 main#main {
   min-height: 80vh !important;
+  background-color: var(--bg-light);
+}
+
+header,
+.site-header,
+.pgn__header {
+  background: var(--bg-primary);
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .navbar-nav .nav-link,
+  .nav-link,
+  a {
+    color: var(--text-medium);
+    font-weight: 600;
+
+    &:hover {
+      color: var(--primary-dark);
+    }
+  }
+
+  .btn,
+  .dropdown-toggle {
+    border-radius: 10px;
+  }
 }

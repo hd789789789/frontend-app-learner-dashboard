@@ -1,15 +1,27 @@
 @import "@openedx/paragon/scss/core/core";
 
+.course-list-container {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .course-list-heading-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.25rem;
 }
 
 .course-list-title {
-  font-size: $h2-font-size;
-  margin: map-get($spacers, 3) 0;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-dark);
 }
 
 .course-list-loading {
@@ -22,12 +34,61 @@
 .course-filter-controls-container {
   text-align: right;
   align-self: center;
+
+  button {
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-medium);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      border-color: var(--primary-color);
+      color: var(--primary-dark);
+      background: var(--bg-light);
+      box-shadow: var(--shadow);
+    }
+
+    &:disabled {
+      background: var(--border-light);
+      color: var(--text-light);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+}
+
+.course-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+
+  .course-card {
+    margin: 0 !important;
+    height: 100%;
+  }
+}
+
+.course-list-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 @include media-breakpoint-down(md) {
+  .course-list-container {
+    padding: 1.5rem;
+  }
+
   .course-list-heading-container {
     flex-direction: column-reverse;
     align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .course-filter-controls-container {
@@ -37,6 +98,5 @@
 
   .course-list-title {
     font-size: $h3-font-size;
-    margin: map-get($spacers, 2) 0;
   }
 }

@@ -1,5 +1,15 @@
 @import "@openedx/paragon/scss/core/core";
 
+#dashboard-container {
+  background: var(--bg-light);
+}
+
+#dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+}
+
 .course-list-column {
   padding: 0 map-get($spacers, 4);
 }
@@ -27,12 +37,12 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #3b82f6;
+  background: var(--primary-color);
   color: #ffffff;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -40,9 +50,9 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background: #2563eb;
+    background: var(--primary-dark);
     transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 6px 16px rgba(33, 150, 243, 0.5);
   }
 
   &:active {
@@ -50,11 +60,11 @@
   }
 
   .dark-theme & {
-    background: #60a5fa;
+    background: var(--primary-light);
     box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
 
     &:hover {
-      background: #3b82f6;
+      background: var(--primary-color);
       box-shadow: 0 6px 16px rgba(96, 165, 250, 0.5);
     }
   }
@@ -65,5 +75,11 @@
     width: 48px;
     height: 48px;
     font-size: 20px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #dashboard-content {
+    padding: 1.25rem 1rem 2rem;
   }
 }
