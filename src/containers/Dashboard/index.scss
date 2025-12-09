@@ -81,11 +81,15 @@
 
 @include media-breakpoint-down(md) {
   #dashboard-content {
-    padding: 1.25rem 1rem 2rem;
+    padding: 1rem 0.75rem 1.5rem;
+  }
+
+  .course-list-column {
+    padding: 0;
   }
 
   .sidebar-column {
-    margin-top: map-get($spacers, 2);
-    padding: 0 map-get($spacers, 2);
+    margin-top: 1.5rem;
+    padding: 0 0.75rem;
   }
 }

@@ -55,6 +55,36 @@
       }
     }
   }
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    padding: 1.25rem 1rem;
+    min-height: auto;
+    max-width: 100%;
+
+    .pgn__card-wrapper-image-cap {
+      min-width: 100%;
+      max-width: 100%;
+      flex: 0 0 auto;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .pgn__card-body {
+      padding-right: 0;
+      text-align: center;
+      min-width: 100%;
+      width: 100%;
+
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      h5 a {
+        font-size: 0.95rem;
+      }
+    }
+  }
 }
 
 .sidebar-column.col-xl-4.col-lg-12.offset-xl-0.offset-lg-0{
