@@ -9,17 +9,22 @@ export const useAccessMessage = ({ cardId }) => {
   const { startDate, endDate } = reduxHooks.useCardCourseRunData(cardId);
   const formatDate = utilHooks.useFormatDate();
 
-  if (!startDate && !endDate) {
-    return null;
+  if (startDate && endDate) {
+    return formatMessage(messages.courseDateRange, {
+      startDate: formatDate(startDate),
+      endDate: formatDate(endDate),
+    });
   }
 
-  const formattedStartDate = startDate ? formatDate(startDate) : '...';
-  const formattedEndDate = endDate ? formatDate(endDate) : '...';
+  if (startDate) {
+    return formatMessage(messages.courseStartOnly, { startDate: formatDate(startDate) });
+  }
 
-  return formatMessage(messages.courseDateRange, {
-    startDate: formattedStartDate,
-    endDate: formattedEndDate,
-  });
+  if (endDate) {
+    return formatMessage(messages.courseEndOnly, { endDate: formatDate(endDate) });
+  }
+
+  return null;
 };
 
 export const useCardDetailsData = ({ cardId }) => {
