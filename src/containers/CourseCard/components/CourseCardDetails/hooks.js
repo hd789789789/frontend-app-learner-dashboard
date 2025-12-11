@@ -6,34 +6,20 @@ import messages from './messages';
 
 export const useAccessMessage = ({ cardId }) => {
   const { formatMessage } = useIntl();
-  const enrollment = reduxHooks.useCardEnrollmentData(cardId);
-  const courseRun = reduxHooks.useCardCourseRunData(cardId);
+  const { startDate, endDate } = reduxHooks.useCardCourseRunData(cardId);
   const formatDate = utilHooks.useFormatDate();
-  if (!courseRun.isStarted) {
-    if (!courseRun.startDate) { return null; }
-    const startDate = formatDate(courseRun.startDate);
-    return formatMessage(messages.courseStarts, { startDate });
-  }
-  if (enrollment.isEnrolled) {
-    const { isArchived, endDate } = courseRun;
-    const {
-      accessExpirationDate,
-      isAuditAccessExpired,
-    } = enrollment;
 
-    if (enrollment.isAudit && accessExpirationDate) {
-      return formatMessage(
-        isAuditAccessExpired ? messages.accessExpired : messages.accessExpires,
-        { accessExpirationDate: formatDate(accessExpirationDate) },
-      );
-    }
-    if (!endDate) { return null; }
-    return formatMessage(
-      isArchived ? messages.courseEnded : messages.courseEnds,
-      { endDate: formatDate(endDate) },
-    );
+  if (!startDate && !endDate) {
+    return null;
   }
-  return null;
+
+  const formattedStartDate = startDate ? formatDate(startDate) : '...';
+  const formattedEndDate = endDate ? formatDate(endDate) : '...';
+
+  return formatMessage(messages.courseDateRange, {
+    startDate: formattedStartDate,
+    endDate: formattedEndDate,
+  });
 };
 
 export const useCardDetailsData = ({ cardId }) => {

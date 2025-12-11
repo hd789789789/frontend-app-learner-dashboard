@@ -174,3 +174,7 @@ header,
     border-radius: 10px;
   }
 }
+
+.sidebar-column.col-xl-4.col-lg-12.offset-xl-0.offset-lg-0, .container-fluid .mt-3.row {
+  margin-top: 0px !important;
+}

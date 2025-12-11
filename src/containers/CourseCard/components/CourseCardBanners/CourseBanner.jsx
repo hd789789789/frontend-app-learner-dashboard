@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Hyperlink } from '@openedx/paragon';
 import { useIntl } from '@edx/frontend-platform/i18n';
 
-import { utilHooks, reduxHooks } from 'hooks';
+import { reduxHooks } from 'hooks';
 import Banner from 'components/Banner';
 import messages from './messages';
 
@@ -14,11 +14,9 @@ export const CourseBanner = ({ cardId }) => {
     isAuditAccessExpired,
     coursewareAccess = {},
   } = reduxHooks.useCardEnrollmentData(cardId);
-  const courseRun = reduxHooks.useCardCourseRunData(cardId);
   const { formatMessage } = useIntl();
-  const formatDate = utilHooks.useFormatDate();
 
-  const { hasUnmetPrerequisites, isStaff, isTooEarly } = coursewareAccess;
+  const { hasUnmetPrerequisites, isStaff } = coursewareAccess;
 
   if (isVerified) { return null; }
 
@@ -34,14 +32,6 @@ export const CourseBanner = ({ cardId }) => {
             </Hyperlink>
           </Banner>
         )}
-
-      {(!isStaff && isTooEarly && courseRun.startDate) && (
-        <Banner>
-          {formatMessage(messages.courseHasNotStarted, {
-            startDate: formatDate(courseRun.startDate),
-          })}
-        </Banner>
-      )}
 
       {(!isStaff && hasUnmetPrerequisites) && (
         <Banner>{formatMessage(messages.prerequisitesNotMet)}</Banner>
