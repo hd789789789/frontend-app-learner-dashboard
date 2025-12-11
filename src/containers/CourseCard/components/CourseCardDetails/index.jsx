@@ -8,25 +8,20 @@ import './index.scss';
 
 export const CourseCardDetails = ({ cardId }) => {
   const {
-    providerName,
     accessMessage,
     isEntitlement,
     isFulfilled,
     canChange,
     openSessionModal,
-    courseNumber,
     changeOrLeaveSessionMessage,
   } = useCardDetailsData({ cardId });
 
   return (
     <span className="course-card-meta small" data-testid="CourseCardDetails">
-      {providerName} • {courseNumber}
-      {!(isEntitlement && !isFulfilled) && accessMessage && (
-        ` • ${accessMessage}`
-      )}
+      {!(isEntitlement && !isFulfilled) && accessMessage}
       {isEntitlement && isFulfilled && canChange ? (
         <>
-          {' • '}
+          {accessMessage ? ' • ' : null}
           <Button variant="link" size="inline" className="m-0 p-0" onClick={openSessionModal}>
             {changeOrLeaveSessionMessage}
           </Button>

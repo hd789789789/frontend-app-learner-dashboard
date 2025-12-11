@@ -23,9 +23,6 @@ export const useAccessMessage = ({ cardId }) => {
 };
 
 export const useCardDetailsData = ({ cardId }) => {
-  const { formatMessage } = useIntl();
-  const providerName = reduxHooks.useCardProviderData(cardId).name;
-  const { courseNumber } = reduxHooks.useCardCourseData(cardId);
   const {
     isEntitlement,
     isFulfilled,
@@ -35,13 +32,11 @@ export const useCardDetailsData = ({ cardId }) => {
   const openSessionModal = reduxHooks.useUpdateSelectSessionModalCallback(cardId);
 
   return {
-    providerName: providerName || formatMessage(messages.unknownProviderName),
     accessMessage: hooks.useAccessMessage({ cardId }),
     isEntitlement,
     isFulfilled,
     canChange,
     openSessionModal,
-    courseNumber,
     changeOrLeaveSessionMessage: formatMessage(messages.changeOrLeaveSessionButton),
   };
 };
