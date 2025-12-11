@@ -23,6 +23,7 @@ export const useAccessMessage = ({ cardId }) => {
 };
 
 export const useCardDetailsData = ({ cardId }) => {
+  const { formatMessage } = useIntl();
   const {
     isEntitlement,
     isFulfilled,
