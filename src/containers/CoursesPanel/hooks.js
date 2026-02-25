@@ -25,7 +25,7 @@ export const useCourseListData = () => {
   const pageNumber = reduxHooks.usePageNumber();
   const setPageNumber = reduxHooks.useSetPageNumber();
 
-  const [sortBy, setSortBy] = module.state.sortBy(SortKeys.enrolled);
+  const [sortBy, setSortBy] = module.state.sortBy(SortKeys.custom);
 
   const querySearch = queryString.parse(window.location.search, { parseNumbers: true });
 
