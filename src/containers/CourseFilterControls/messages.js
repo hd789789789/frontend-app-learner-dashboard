@@ -51,6 +51,11 @@ const messages = defineMessages({
     description: 'Title sort option text',
     defaultMessage: 'Tiêu đề (A-Z)',
   },
+  sortCustom: {
+    id: 'learner-dash.courseListFilters.sortCustom',
+    description: 'Custom group sort option text',
+    defaultMessage: 'Nhóm khóa học',
+  },
   refine: {
     id: 'learner-dash.courseListFilters.refine',
     description: 'Filter button container text',
