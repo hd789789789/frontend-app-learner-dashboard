@@ -50,7 +50,7 @@ export const courseCard = StrictDict({
 
       minPassingGrade: Math.floor(courseRun.minPassingGrade * 100),
 
-      homeUrl: courseRun.homeUrl,
+      homeUrl: courseRun.homeUrl ? courseRun.homeUrl.replace(/\/home\/?$/, '/welcome') : courseRun.homeUrl,
       marketingUrl: courseRun.marketingUrl,
 
       progressUrl: baseAppUrl(courseRun.progressUrl),
